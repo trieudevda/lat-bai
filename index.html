@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>游戏 - Ghép Thẻ Tiếng Trung</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔊</button>
+
+    <div class="game-container">
+        <div class="header">
+            <h1>🎮 游戏 - Ghép Thẻ Tiếng Trung</h1>
+        </div>
+
+        <div id="startScreen" class="start-screen">
+            <h2>Chào mừng bạn!</h2>
+            
+            <div class="name-input">
+                <input type="text" id="playerNameInput" placeholder="Nhập tên của bạn..." maxlength="20">
+            </div>
+
+            <ul>
+                <li>🎯 Ghép đúng cặp chữ Hán và hình ảnh</li>
+                <li>⏱️ Mỗi level có 30 giây</li>
+                <li>❤️ Bạn có 3 mạng mỗi level</li>
+                <li>📈 Level 1: 6 cặp | Level 2: 8 cặp</li>
+                <li>🏆 Hoàn thành để nhận điểm cao!</li>
+                <li>🌐 <span id="connectionStatus"><span class="online-indicator"></span>Đang kết nối...</span></li>
+            </ul>
+            <button onclick="startGame()">Bắt đầu chơi!</button>
+            <button class="view-leaderboard-btn" onclick="showLeaderboardModal()">🏆 Xem bảng xếp hạng</button>
+        </div>
+
+        <div id="gameScreen" style="display: none;">
+            <div class="game-info">
+                <div class="info-item player-name">👤 <span id="playerNameDisplay"></span></div>
+                <div class="info-item level">Level: <span id="levelDisplay">1</span></div>
+                <div class="info-item timer">⏱️ <span id="timer">30</span>s</div>
+                <div class="info-item lives">❤️ <span id="lives">3</span></div>
+                <div class="info-item score">⭐ <span id="scoreDisplay">0</span></div>
+            </div>
+            <div id="cardsGrid" class="cards-grid level-1"></div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle"></h2>
+            <p id="modalMessage"></p>
+            <div id="modalExtra"></div>
+            <div id="modalButtons"></div>
+        </div>
+    </div>
+
+    <script src="server.js" ></script>
+    <script src="js.js" >
+    </script>
+</body>
+</html>
