@@ -73,7 +73,7 @@ const gameData = {
 
 let playerName = '';
 let currentLevel = 1;
-let lives = 3;
+let lives = 5;
 let timeLeft = 30;
 let timerInterval;
 let flippedCards = [];
@@ -230,7 +230,7 @@ function startGame() {
 
 function initLevel(level) {
     currentLevel = level;
-    lives = 3;
+    lives = 5;
     timeLeft = 30;
     matchedPairs = 0;
     flippedCards = [];
